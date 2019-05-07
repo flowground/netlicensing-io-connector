@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "productModuleNumber": {
+            "required": true,
+            "type": "string"
+        },
+        "forceCascade": {
+            "required": false,
+            "type": "boolean"
+        }
+    }
+}

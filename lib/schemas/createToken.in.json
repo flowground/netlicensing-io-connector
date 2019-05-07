@@ -1,0 +1,42 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "tokenType": {
+                    "description": "Token type to be generated",
+                    "type": "string",
+                    "enum": [
+                        "DEFAULT",
+                        "SHOP",
+                        "APIKEY"
+                    ]
+                },
+                "licenseeNumber": {
+                    "description": "for <i>tokenType=SHOP</i> only (mandatory); identifies licensee that will be assigned to the shop token",
+                    "type": "string"
+                },
+                "successURL": {
+                    "description": "for <i>tokenType=SHOP</i> only; take customers to this URL when they finish checkout",
+                    "type": "string"
+                },
+                "successURLTitle": {
+                    "description": "for <i>tokenType=SHOP</i> only; shop link title for successful checkout process",
+                    "type": "string"
+                },
+                "cancelURL": {
+                    "description": "for <i>tokenType=SHOP</i> only; take customers to this URL when they cancel their checkout",
+                    "type": "string"
+                },
+                "cancelURLTitle": {
+                    "description": "for <i>tokenType=SHOP</i> only; shop link title for cancel checkout process",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "tokenType"
+            ]
+        }
+    }
+}

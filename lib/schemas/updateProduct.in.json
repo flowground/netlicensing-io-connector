@@ -1,0 +1,59 @@
+{
+    "type": "object",
+    "properties": {
+        "productNumber": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "number": {
+                    "description": "New product number (update)",
+                    "type": "string"
+                },
+                "active": {
+                    "description": "If set to 'false', the product is disabled. No new licensees can be registered for the product, existing licensees can not obtain new licenses.",
+                    "type": "boolean"
+                },
+                "name": {
+                    "description": "Product name. Together with the version identifies the product for the end customer.",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "Product version. Convenience parameter, additional to the product name.",
+                    "type": "string"
+                },
+                "licenseeAutoCreate": {
+                    "description": "If set to 'true', non-existing licensees will be created at first validation attempt.",
+                    "type": "boolean"
+                },
+                "description": {
+                    "description": "Product description.",
+                    "type": "string"
+                },
+                "licensingInfo": {
+                    "description": "Licensing information.",
+                    "type": "string"
+                },
+                "licenseeSecretMode": {
+                    "description": "Licensee secret mode for product. Supported types: DISABLED, PREDEFINED, CLIENT",
+                    "type": "string",
+                    "enum": [
+                        "DISABLED",
+                        "PREDEFINED",
+                        "CLIENT"
+                    ]
+                },
+                "vatMode": {
+                    "description": "Vat mode for product. Supported types: GROSS, NET",
+                    "type": "string",
+                    "enum": [
+                        "GROSS",
+                        "NET"
+                    ]
+                }
+            }
+        }
+    }
+}

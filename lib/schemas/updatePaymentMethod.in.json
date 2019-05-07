@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "paymentMethodNumber": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "active": {
+                    "description": "If set to 'false', the payment method is disabled.",
+                    "type": "boolean"
+                },
+                "paypal_subject": {
+                    "description": "The e-mail address of the PayPal account for which you are making the API calls.",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

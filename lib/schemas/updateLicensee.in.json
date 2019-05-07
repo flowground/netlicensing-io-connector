@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "licenseeNumber": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "number": {
+                    "description": "New licensee number (update).",
+                    "type": "string"
+                },
+                "active": {
+                    "description": "If set to 'false', the licensee is disabled. Licensee can not obtain new licenses, and validation is disabled",
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "licenseeSecret": {
+                    "description": "Licensee Secret for licensee.",
+                    "type": "string"
+                },
+                "markedForTransfer": {
+                    "description": "Mark licensee for transfer.",
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}

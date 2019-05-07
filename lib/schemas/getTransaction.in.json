@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "transactionNumber": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

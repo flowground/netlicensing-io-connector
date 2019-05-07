@@ -1,0 +1,62 @@
+{
+    "type": "object",
+    "properties": {
+        "licenseNumber": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "number": {
+                    "description": "Unique number (across all products/licensees of a vendor) that identifies the license. Vendor can assign this number when creating a license or let NetLicensing generate one. Read-only after corresponding creation transaction status is set to closed.",
+                    "type": "string"
+                },
+                "active": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "description": "Name for the licensed item. Set from license template on creation, if not specified explicitly.",
+                    "type": "string"
+                },
+                "startDate": {
+                    "description": "for TIMEVOLUME licenseType",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "parentfeature": {
+                    "type": "string"
+                },
+                "timeVolume": {
+                    "description": "Mandatory for 'TIMEVOLUME' license type.",
+                    "type": "string"
+                },
+                "timeVolumePeriod": {
+                    "description": "For 'TIMEVOLUME' license type.",
+                    "type": "string"
+                },
+                "price": {
+                    "description": "Price for the license. If > 0, it must always be accompanied by the currency specification. Read-only, set from license template on creation",
+                    "type": "number",
+                    "format": "double"
+                },
+                "currency": {
+                    "description": "Specifies currency for the license price. Check data types to discover which currencies are supported. Read-only, set from license template on creation",
+                    "type": "string"
+                },
+                "hidden": {
+                    "description": "If set to 'true', this license is not shown in NetLicensing Shop as purchased license. Set from license template on creation, if not specified explicitly",
+                    "type": "boolean"
+                },
+                "quantity": {
+                    "description": "Mandatory for 'Pay-per-Use' license model.",
+                    "type": "string"
+                },
+                "usedQuantity": {
+                    "description": "Mandatory for 'Pay-per-Use' license model.",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "licenseNumber": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

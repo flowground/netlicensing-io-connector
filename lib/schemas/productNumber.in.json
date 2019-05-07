@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "productNumber": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

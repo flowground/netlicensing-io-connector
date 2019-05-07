@@ -1,0 +1,48 @@
+{
+    "type": "object",
+    "properties": {
+        "transactionNumber": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "number": {
+                    "description": "Unique number (across all products of a vendor) that identifies the transaction",
+                    "type": "string"
+                },
+                "active": {
+                    "description": "always true for transactions",
+                    "type": "boolean"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "CANCELLED",
+                        "CLOSED",
+                        "PENDING"
+                    ]
+                },
+                "source": {
+                    "description": "AUTO transaction for internal use only",
+                    "type": "string",
+                    "enum": [
+                        "SHOP"
+                    ]
+                },
+                "dateCreated": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "dateClosed": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "paymentMethod": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

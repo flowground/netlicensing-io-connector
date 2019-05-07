@@ -1,0 +1,728 @@
+{
+    "title": "Labs64 NetLicensing RESTful API Test Center",
+    "description": "The Labs64 <a href='https://www.labs64.de/confluence/x/pwCo' target='_blank'>NetLicensing RESTful API</a> gives you access to NetLicensing's core features.<br/><br/><strong>Authentication</strong><br/>You authenticate to the NetLicensing API by providing your account credentials or simply use our demo account - <code>demo:demo</code><br/><br/>Find out more about Labs64 NetLicensing at <a href='https://netlicensing.io' target='_blank'>netlicensing.io</a>",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/netlicensing.io/2.x/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://go.netlicensing.io/core/v2/rest",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "api_key": {
+                "label": "api_key (api_key)",
+                "viewClass": "TextFieldView"
+            },
+            "username": {
+                "label": "Username (basicAuth)",
+                "viewClass": "TextFieldView",
+                "note": "HTTP Basic Authentication. Works over `HTTP` and `HTTPS`"
+            },
+            "password": {
+                "label": "Password (basicAuth)",
+                "viewClass": "TextFieldView",
+                "note": "HTTP Basic Authentication. Works over `HTTP` and `HTTPS`"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "listLicenses": {
+            "main": "./lib/actions/listLicenses.js",
+            "title": "Licenses list",
+            "description": "Return a list of all licenses for the current vendor",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listLicenses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createLicense": {
+            "main": "./lib/actions/createLicense.js",
+            "title": "Create license",
+            "description": "Creates a new license",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createLicense.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteLicense": {
+            "main": "./lib/actions/deleteLicense.js",
+            "title": "Delete license",
+            "description": "Delete license by a licenseNumber",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteLicense.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getLicense": {
+            "main": "./lib/actions/getLicense.js",
+            "title": "Get license",
+            "description": "Get license by a licenseNumber",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getLicense.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateLicense": {
+            "main": "./lib/actions/updateLicense.js",
+            "title": "Update license",
+            "description": "Update license by a licenseNumber",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateLicense.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listLicensees": {
+            "main": "./lib/actions/listLicensees.js",
+            "title": "Licensees list",
+            "description": "Return a list of all licensees for the current vendor",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listLicensees.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createLicensee": {
+            "main": "./lib/actions/createLicensee.js",
+            "title": "Create licensee",
+            "description": "Creates a new licensee",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createLicensee.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteLicensee": {
+            "main": "./lib/actions/deleteLicensee.js",
+            "title": "Delete licensee",
+            "description": "Delete a licensee by number",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteLicensee.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getLicensee": {
+            "main": "./lib/actions/getLicensee.js",
+            "title": "Get licensee",
+            "description": "Return a licensee by licenseeNumber",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getLicensee.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateLicensee": {
+            "main": "./lib/actions/updateLicensee.js",
+            "title": "Update licensee",
+            "description": "Sets the provided properties to a licensee. Return an updated licensee",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateLicensee.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "transferLicenses": {
+            "main": "./lib/actions/transferLicenses.js",
+            "title": "Transfer licenses",
+            "description": "Licenses transfer between licensees",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/transferLicenses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "validateLicensee": {
+            "main": "./lib/actions/validateLicensee.js",
+            "title": "Validate licensee",
+            "description": "Validates active licenses of the licensee",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/validateLicensee.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listLicenseTemplates": {
+            "main": "./lib/actions/listLicenseTemplates.js",
+            "title": "License Templates list",
+            "description": "Return a list of all license templates for the current vendor",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listLicenseTemplates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createLicenseTemplate": {
+            "main": "./lib/actions/createLicenseTemplate.js",
+            "title": "Create license template",
+            "description": "Creates a new license template",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createLicenseTemplate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteLicenseTemplate": {
+            "main": "./lib/actions/deleteLicenseTemplate.js",
+            "title": "Delete license template",
+            "description": "Delete a license template by number.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteLicenseTemplate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getLicenseTemplate": {
+            "main": "./lib/actions/getLicenseTemplate.js",
+            "title": "Get license template",
+            "description": "Return a license template by licenseTemplateNumber",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getLicenseTemplate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateLicenseTemplate": {
+            "main": "./lib/actions/updateLicenseTemplate.js",
+            "title": "Update license template",
+            "description": "Sets the provided properties to a license template. Return an updated license template",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateLicenseTemplate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listPaymentMethods": {
+            "main": "./lib/actions/listPaymentMethods.js",
+            "title": "Payment Methods list",
+            "description": "Return a list of all payment methods for the current vendor",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listPaymentMethods.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPaymentMethod": {
+            "main": "./lib/actions/getPaymentMethod.js",
+            "title": "Get payment method",
+            "description": "Return a payment method info by paymentMethodNumber",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPaymentMethod.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updatePaymentMethod": {
+            "main": "./lib/actions/updatePaymentMethod.js",
+            "title": "Update payment method",
+            "description": "Sets the provided properties to a payment method. Return an updated payment method",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updatePaymentMethod.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listProducts": {
+            "main": "./lib/actions/listProducts.js",
+            "title": "Products list",
+            "description": "Return a list of all configured products for the current vendor",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listProducts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createProduct": {
+            "main": "./lib/actions/createProduct.js",
+            "title": "Create product",
+            "description": "Creates a new product",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createProduct.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteProduct": {
+            "main": "./lib/actions/deleteProduct.js",
+            "title": "Delete product",
+            "description": "Delete a product by number",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteProduct.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "productNumber": {
+            "main": "./lib/actions/productNumber.js",
+            "title": "Get product",
+            "description": "Return a product by productNumber",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/productNumber.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateProduct": {
+            "main": "./lib/actions/updateProduct.js",
+            "title": "Update product",
+            "description": "Sets the provided properties to a product. Return an updated product",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateProduct.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listProductModules": {
+            "main": "./lib/actions/listProductModules.js",
+            "title": "Product Modules list",
+            "description": "Return a list of all product modules for the current vendor",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listProductModules.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createProductModule": {
+            "main": "./lib/actions/createProductModule.js",
+            "title": "Create product module",
+            "description": "Creates a new product module",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createProductModule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteProductModule": {
+            "main": "./lib/actions/deleteProductModule.js",
+            "title": "Delete product module",
+            "description": "Delete a product module by number",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteProductModule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getProductModule": {
+            "main": "./lib/actions/getProductModule.js",
+            "title": "Get product module",
+            "description": "Return a product module by productModuleNumber",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getProductModule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateProductModule": {
+            "main": "./lib/actions/updateProductModule.js",
+            "title": "Update product module",
+            "description": "Sets the provided properties to a product module. Return an updated product module",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateProductModule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listTokens": {
+            "main": "./lib/actions/listTokens.js",
+            "title": "Tokens list",
+            "description": "Return a list of all tokens for the current vendor",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listTokens.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createToken": {
+            "main": "./lib/actions/createToken.js",
+            "title": "Create token",
+            "description": "Create token by tokenType and additional token parameters",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createToken.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteToken": {
+            "main": "./lib/actions/deleteToken.js",
+            "title": "Delete token",
+            "description": "Delete a token by number",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteToken.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getToken": {
+            "main": "./lib/actions/getToken.js",
+            "title": "Get token",
+            "description": "Return a token by tokenNumber",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getToken.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listTransactions": {
+            "main": "./lib/actions/listTransactions.js",
+            "title": "Transactions list",
+            "description": "Return a list of all transactions for the current vendor",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listTransactions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createTransaction": {
+            "main": "./lib/actions/createTransaction.js",
+            "title": "Create transaction",
+            "description": "Creates a new transaction",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createTransaction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTransaction": {
+            "main": "./lib/actions/getTransaction.js",
+            "title": "Get transaction ",
+            "description": "Return a transaction by transactionNumber",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTransaction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateTransaction": {
+            "main": "./lib/actions/updateTransaction.js",
+            "title": "Update transaction",
+            "description": "Sets the provided properties to a transaction. Return an updated transaction",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateTransaction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "licenseTypes": {
+            "main": "./lib/actions/licenseTypes.js",
+            "title": "License Types list",
+            "description": "Return a list of all license types supported by the service",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/licenseTypes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "licensingModels": {
+            "main": "./lib/actions/licensingModels.js",
+            "title": "Licensing Models list",
+            "description": "Return a list of all licensing models supported by the service",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/licensingModels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

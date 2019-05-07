@@ -1,0 +1,60 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "productNumber": {
+                    "description": "Unique number (across all products of a vendor) that identifies the product module. Vendor can assign this number when creating a product module or let NetLicensing generate one. Read-only after creation of the first licensee for the product.",
+                    "type": "string"
+                },
+                "number": {
+                    "description": "Unique number (across all products of a vendor) that identifies the product module. Vendor can assign this number when creating a product module or let NetLicensing generate one. Read-only after creation of the first licensee for the product.",
+                    "type": "string"
+                },
+                "active": {
+                    "description": "If set to 'false', the product module is disabled. Licensees can not obtain any new licenses for this product module.",
+                    "type": "boolean"
+                },
+                "name": {
+                    "description": "Product module name that is visible to the end customers in NetLicensing Shop.",
+                    "type": "string"
+                },
+                "licensingModel": {
+                    "description": "Licensing model applied to this product module. Defines what license templates can be configured for the product module and how licenses for this product module are processed during validation.",
+                    "type": "string"
+                },
+                "maxCheckoutValidity": {
+                    "description": "Maximum checkout validity (days). Mandatory for 'Floating' licensing model.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "yellowThreshold": {
+                    "description": "Remaining time volume for yellow level. Mandatory for 'Rental' licensing model.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "redThreshold": {
+                    "description": "Remaining time volume for red level. Mandatory for 'Rental' licensing model.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "licenseTemplate": {
+                    "description": "License template. Mandatory for 'Try &amp; Buy' licensing model.",
+                    "type": "array",
+                    "items": {
+                        "default": "TIMEVOLUME",
+                        "enum": [
+                            "TIMEVOLUME",
+                            "FEATURE"
+                        ],
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "productNumber"
+            ]
+        }
+    }
+}

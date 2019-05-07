@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "tokenNumber": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

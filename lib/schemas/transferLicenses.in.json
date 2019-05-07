@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "licenseeNumber": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "sourceLicenseeNumber": {
+                    "description": "Licensee number which licenses to be transferred",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "sourceLicenseeNumber"
+            ]
+        }
+    }
+}
